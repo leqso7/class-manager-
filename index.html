@@ -9,21 +9,15 @@
     <title>Class Manager</title>
     <script type="text/javascript">
       (function() {
-        var path = window.location.pathname;
-        var hash = window.location.hash;
-        
-        // If we're at the root with no hash, redirect to #/
-        if (path.endsWith('/class-manager-/') && !hash) {
-          window.location.replace(window.location.href + '#/');
-        }
-        
-        // If we have a trailing slash but no hash, add the hash
-        if (path.endsWith('/') && !hash) {
-          window.location.replace(window.location.href + '#/');
+        // გადამისამართება მთავარ აპლიკაციაზე
+        if (!window.location.hash || window.location.hash === '#/') {
+          const savedStatus = localStorage.getItem('approvalStatus');
+          const targetRoute = savedStatus === 'approved' ? '#/app' : '#/request';
+          window.location.replace(window.location.pathname + targetRoute);
         }
       })();
     </script>
-    <script type="module" crossorigin src="/class-manager-/assets/index-I4urpn3X.js"></script>
+    <script type="module" crossorigin src="/class-manager-/assets/index-BLN7Mb3c.js"></script>
     <link rel="stylesheet" crossorigin href="/class-manager-/assets/index-D-Xodb0M.css">
   <link rel="manifest" href="/class-manager-/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/class-manager-/registerSW.js"></script></head>
   <body>
