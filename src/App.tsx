@@ -210,23 +210,23 @@ function App() {
       />
       <AppContainer>
         <Routes>
-          <Route path="/" element={
+          <Route path="/class-manager-/" element={
             hasAccess ? (
-              <Navigate to="/app" replace={true} />
+              <Navigate to="/class-manager-/app" replace={true} />
             ) : (
-              <Navigate to="/request" replace={true} />
+              <Navigate to="/class-manager-/request" replace={true} />
             )
           } />
-          <Route path="/app" element={
+          <Route path="/class-manager-/app" element={
             hasAccess ? (
               <SearchList students={students} setStudents={setStudents} />
             ) : (
-              <Navigate to="/request" replace={true} />
+              <Navigate to="/class-manager-/request" replace={true} />
             )
           } />
-          <Route path="/request" element={
+          <Route path="/class-manager-/request" element={
             hasAccess ? (
-              <Navigate to="/app" replace={true} />
+              <Navigate to="/class-manager-/app" replace={true} />
             ) : (
               <RequestAccess onAccessGranted={() => {
                 setHasAccess(true);
@@ -234,7 +234,7 @@ function App() {
               }} />
             )
           } />
-          <Route path="*" element={<Navigate to="/" replace={true} />} />
+          <Route path="*" element={<Navigate to="/class-manager-/" replace={true} />} />
         </Routes>
         <InstallPWA />
         

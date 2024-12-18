@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/class-manager-/',
   plugins: [
     react(),
     VitePWA({
@@ -19,16 +19,16 @@ export default defineConfig({
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
-        scope: '/',
+        start_url: '/class-manager-/',
+        scope: '/class-manager-/',
         icons: [
           {
-            src: '/vite.svg',
+            src: '/class-manager-/vite.svg',
             sizes: '192x192',
             type: 'image/svg+xml'
           },
           {
-            src: '/vite.svg',
+            src: '/class-manager-/vite.svg',
             sizes: '512x512',
             type: 'image/svg+xml',
             purpose: 'any maskable'
